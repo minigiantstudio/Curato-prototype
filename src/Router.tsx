@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { useApp } from './state/AppState';
+import { ScreenTransition } from './motion/ScreenTransition';
 import { HomeScreen } from './screens/HomeScreen';
 import { AccountSheet } from './screens/AccountSheet';
 import { CaptureUploadScreen } from './screens/capture/UploadScreen';
@@ -69,7 +70,7 @@ export function Router() {
 
   return (
     <View style={{ flex: 1 }}>
-      {screen}
+      <ScreenTransition screenKey={app.screen}>{screen}</ScreenTransition>
       <AccountSheet />
       <BrandPickerSheet />
     </View>
