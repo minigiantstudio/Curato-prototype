@@ -5,6 +5,7 @@ import { Facet, FlyParticle } from '../../components/Facet';
 import { Chip } from '../../components/Chip';
 import { GhostButton } from '../../components/Button';
 import { BlockSurface } from '../../components/BlockSurface';
+import { Reveal } from '../../components/Reveal';
 import { Display, SerifAccent, Body, Label } from '../../theme/Type';
 import { colors, shadow, radius } from '../../theme/colors';
 import { useApp } from '../../state/AppState';
@@ -41,49 +42,55 @@ export function CaptureWhyScreen() {
             paddingHorizontal: 12,
           }}
         >
-          <Label style={{ fontSize: 13, textTransform: 'none', letterSpacing: 0 }}>←</Label>
-          <Label style={{ fontSize: 10 }}>Retake</Label>
+          <Label style={{ fontSize: 14, textTransform: 'none', letterSpacing: 0 }}>←</Label>
+          <Label style={{ fontSize: 11 }}>Retake</Label>
         </Pressable>
       </View>
 
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ padding: 22, paddingTop: 18 }}>
-        <SerifAccent style={{ fontSize: 18, lineHeight: 25, marginBottom: 20 }}>
-          A quiet serif logotype with warm, low-contrast earth tones — restraint doing the talking.
-        </SerifAccent>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ padding: 24, paddingTop: 20 }}>
+        <Reveal index={0}>
+          <SerifAccent style={{ fontSize: 20, lineHeight: 28, marginBottom: 24 }}>
+            A quiet serif logotype with warm, low-contrast earth tones — restraint doing the talking.
+          </SerifAccent>
+        </Reveal>
 
-        <View style={{ gap: 14, marginBottom: 20 }}>
-          {BREAKDOWN.map((row) => (
-            <View key={row.label}>
-              <Label style={{ fontSize: 10, color: colors.blue, marginBottom: 4 }}>{row.label}</Label>
-              <Body style={{ fontSize: 13, lineHeight: 19 }}>{row.text}</Body>
-            </View>
+        <View style={{ gap: 18, marginBottom: 22 }}>
+          {BREAKDOWN.map((row, i) => (
+            <Reveal key={row.label} index={i + 1}>
+              <Label style={{ fontSize: 11, color: colors.blue, marginBottom: 5 }}>{row.label}</Label>
+              <Body style={{ fontSize: 14.5, lineHeight: 21 }}>{row.text}</Body>
+            </Reveal>
           ))}
         </View>
 
-        <View
-          style={{
-            flexDirection: 'row',
-            gap: 12,
-            backgroundColor: colors.green,
-            borderWidth: 1.5,
-            borderColor: colors.ink,
-            borderRadius: radius.lg,
-            padding: 16,
-            marginBottom: 16,
-          }}
-        >
-          <Facet size={9} style={{ marginTop: 4 }} />
-          <Body style={{ fontSize: 13, lineHeight: 19, flex: 1 }}>
-            This is the 6th piece you've loved with muted earth tones and understated serifs. It's
-            becoming one of your clearest patterns.
-          </Body>
-        </View>
+        <Reveal index={4}>
+          <View
+            style={{
+              flexDirection: 'row',
+              gap: 12,
+              backgroundColor: colors.green,
+              borderWidth: 1.5,
+              borderColor: colors.ink,
+              borderRadius: radius.lg,
+              padding: 18,
+              marginBottom: 18,
+            }}
+          >
+            <Facet size={10} style={{ marginTop: 5 }} />
+            <Body style={{ fontSize: 14.5, lineHeight: 21, flex: 1 }}>
+              This is the 6th piece you've loved with muted earth tones and understated serifs. It's
+              becoming one of your clearest patterns.
+            </Body>
+          </View>
+        </Reveal>
 
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
-          {TAGS.map((t) => (
-            <Chip key={t} label={t} />
-          ))}
-        </View>
+        <Reveal index={5}>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
+            {TAGS.map((t) => (
+              <Chip key={t} label={t} />
+            ))}
+          </View>
+        </Reveal>
       </ScrollView>
 
       <View

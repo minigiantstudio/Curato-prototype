@@ -57,7 +57,7 @@ export function CompareUploadScreen() {
         <Display style={{ fontSize: 26, lineHeight: 31, marginBottom: 10 }}>
           Two <SerifAccent style={{ fontSize: 26 }}>directions?</SerifAccent>
         </Display>
-        <Body style={{ fontSize: 13.5, lineHeight: 20, marginBottom: 20 }}>
+        <Body style={{ fontSize: 15, lineHeight: 22, marginBottom: 22 }}>
           Upload both options. Curato tells you which fits your taste.
         </Body>
 
@@ -68,7 +68,7 @@ export function CompareUploadScreen() {
 
         <View style={{ paddingVertical: 16 }}>
           <PrimaryButton label="Compare →" onPress={app.startComparing} disabled={!ready} />
-          <Label style={{ textAlign: 'center', fontSize: 10, marginTop: 10 }}>
+          <Label style={{ textAlign: 'center', fontSize: 11, marginTop: 10 }}>
             Weighed against your confirmed taste
           </Label>
         </View>

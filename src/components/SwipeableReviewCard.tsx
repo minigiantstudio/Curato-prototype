@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Animated, PanResponder, View } from 'react-native';
 import { BlockSurface } from './BlockSurface';
 import { GhostButton } from './Button';
+import { AnimatedBar } from './AnimatedBar';
 import { Display, Label } from '../theme/Type';
 import { colors, radius, shadow } from '../theme/colors';
 import { motion } from '../motion/tokens';
@@ -149,28 +150,17 @@ export function SwipeableReviewCard({
               >
                 {p.verb}
               </Label>
-              <Label style={{ fontSize: 10 }}>{p.domain}</Label>
+              <Label style={{ fontSize: 11 }}>{p.domain}</Label>
             </View>
 
-            <Display style={{ fontSize: 23, lineHeight: 30, marginBottom: 20 }}>{p.statement}</Display>
+            <Display style={{ fontSize: 25, lineHeight: 32, marginBottom: 22 }}>{p.statement}</Display>
 
             <View style={{ marginBottom: 8 }}>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 6 }}>
-                <Label style={{ fontSize: 10 }}>Confidence</Label>
-                <Label style={{ fontSize: 10, color: colors.blue }}>{p.confidence}%</Label>
+                <Label style={{ fontSize: 11 }}>Confidence</Label>
+                <Label style={{ fontSize: 11, color: colors.blue }}>{p.confidence}%</Label>
               </View>
-              <View
-                style={{
-                  height: 4,
-                  backgroundColor: colors.cream,
-                  borderWidth: 1,
-                  borderColor: colors.ink,
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                }}
-              >
-                <View style={{ width: `${p.confidence}%`, height: '100%', backgroundColor: colors.blue }} />
-              </View>
+              <AnimatedBar percent={p.confidence} track={colors.cream} delay={220} />
             </View>
 
             <View style={{ flex: 1 }} />

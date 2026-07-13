@@ -2,6 +2,7 @@ import React from 'react';
 import { Pressable, View } from 'react-native';
 import { TabBar } from '../../components/TabBar';
 import { SwipeableReviewCard } from '../../components/SwipeableReviewCard';
+import { AnimatedBar } from '../../components/AnimatedBar';
 import { Label } from '../../theme/Type';
 import { colors } from '../../theme/colors';
 import { useApp } from '../../state/AppState';
@@ -26,20 +27,8 @@ export function ReviewCardScreen() {
       </View>
 
       <View style={{ paddingHorizontal: 22, paddingTop: 16 }}>
-        <View
-          style={{
-            height: 4,
-            backgroundColor: colors.creamLight,
-            borderWidth: 1,
-            borderColor: colors.ink,
-            borderRadius: 2,
-            overflow: 'hidden',
-            marginBottom: 10,
-          }}
-        >
-          <View style={{ width: `${progressPct}%`, height: '100%', backgroundColor: colors.blue }} />
-        </View>
-        <Label style={{ fontSize: 10, marginBottom: 20 }}>
+        <AnimatedBar percent={progressPct} height={5} style={{ marginBottom: 10 }} />
+        <Label style={{ fontSize: 11, marginBottom: 20 }}>
           {remaining} pattern{remaining === 1 ? '' : 's'} to review
         </Label>
       </View>

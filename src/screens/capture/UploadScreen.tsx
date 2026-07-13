@@ -19,7 +19,7 @@ export function CaptureUploadScreen() {
         <Display style={{ fontSize: 28, lineHeight: 33, marginBottom: 10 }}>
           What caught your <SerifAccent style={{ fontSize: 28 }}>eye?</SerifAccent>
         </Display>
-        <Body style={{ fontSize: 13.5, lineHeight: 20, marginBottom: 20 }}>
+        <Body style={{ fontSize: 15, lineHeight: 22, marginBottom: 22 }}>
           Snap it or upload it. Curato reads it and tells you why it stopped you.
         </Body>
 
@@ -67,7 +67,7 @@ export function CaptureUploadScreen() {
 
         <View style={{ paddingVertical: 16 }}>
           <PrimaryButton label="Read this →" onPress={app.startReading} disabled={!app.captureHasImage} />
-          <Label style={{ textAlign: 'center', fontSize: 10, marginTop: 10 }}>
+          <Label style={{ textAlign: 'center', fontSize: 11, marginTop: 10 }}>
             Curato analyzes it · you decide if it's yours
           </Label>
         </View>

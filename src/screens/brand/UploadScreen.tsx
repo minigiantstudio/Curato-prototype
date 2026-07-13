@@ -17,7 +17,7 @@ export function BrandUploadScreen() {
         <Display style={{ fontSize: 28, lineHeight: 33, marginBottom: 10 }}>
           Does this fit your <SerifAccent style={{ fontSize: 28 }}>brand?</SerifAccent>
         </Display>
-        <Body style={{ fontSize: 13.5, lineHeight: 20, marginBottom: 18 }}>
+        <Body style={{ fontSize: 15, lineHeight: 22, marginBottom: 20 }}>
           Upload a post or design. Curato checks it against your brand's confirmed taste.
         </Body>
 
@@ -45,7 +45,7 @@ export function BrandUploadScreen() {
 
         <View style={{ paddingVertical: 16 }}>
           <PrimaryButton label="Choose brand →" onPress={app.openBrandSheet} disabled={!app.brandHasImage} />
-          <Label style={{ textAlign: 'center', fontSize: 10, marginTop: 10 }}>
+          <Label style={{ textAlign: 'center', fontSize: 11, marginTop: 10 }}>
             One image · checked against your saved brand
           </Label>
         </View>

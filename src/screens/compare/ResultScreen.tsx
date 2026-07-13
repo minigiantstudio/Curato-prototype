@@ -4,6 +4,7 @@ import { OptionAGradient, OptionBGradient } from '../../components/Placeholders'
 import { Facet, FlyParticle } from '../../components/Facet';
 import { GhostButton } from '../../components/Button';
 import { BlockSurface } from '../../components/BlockSurface';
+import { Reveal } from '../../components/Reveal';
 import { SerifAccent, Body, Label } from '../../theme/Type';
 import { colors, radius, shadow } from '../../theme/colors';
 import { useApp } from '../../state/AppState';
@@ -19,10 +20,10 @@ export function CompareResultScreen() {
   return (
     <View style={{ flex: 1 }}>
       <View style={{ alignItems: 'center', justifyContent: 'center', paddingVertical: 20, paddingBottom: 4 }}>
-        <Label style={{ fontSize: 12, color: colors.ink }}>Recommendation</Label>
+        <Label style={{ fontSize: 13, color: colors.ink }}>Recommendation</Label>
       </View>
 
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ padding: 22, paddingTop: 14 }}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ padding: 24, paddingTop: 14 }}>
         <View style={{ flexDirection: 'row', gap: 10, marginBottom: 20 }}>
           <View style={{ flex: 1, height: 110, borderRadius: radius.lg, overflow: 'hidden', borderWidth: 1.5, borderColor: colors.ink, opacity: 0.6 }}>
             <OptionAGradient style={{ flex: 1 }} />
@@ -57,36 +58,40 @@ export function CompareResultScreen() {
           </View>
         </View>
 
-        <SerifAccent style={{ fontSize: 18, lineHeight: 25, marginBottom: 20 }}>
-          Option B holds your restraint — the high-contrast type in A fights your muted-palette principle.
-        </SerifAccent>
+        <Reveal index={0}>
+          <SerifAccent style={{ fontSize: 20, lineHeight: 28, marginBottom: 22 }}>
+            Option B holds your restraint — the high-contrast type in A fights your muted-palette principle.
+          </SerifAccent>
+        </Reveal>
 
-        <View style={{ gap: 14, marginBottom: 20 }}>
-          {BREAKDOWN.map((row) => (
-            <View key={row.label}>
-              <Label style={{ fontSize: 10, color: colors.blue, marginBottom: 4 }}>{row.label}</Label>
-              <Body style={{ fontSize: 13, lineHeight: 19 }}>{row.text}</Body>
-            </View>
+        <View style={{ gap: 18, marginBottom: 22 }}>
+          {BREAKDOWN.map((row, i) => (
+            <Reveal key={row.label} index={i + 1}>
+              <Label style={{ fontSize: 11, color: colors.blue, marginBottom: 5 }}>{row.label}</Label>
+              <Body style={{ fontSize: 14.5, lineHeight: 21 }}>{row.text}</Body>
+            </Reveal>
           ))}
         </View>
 
-        <View
-          style={{
-            flexDirection: 'row',
-            gap: 12,
-            backgroundColor: colors.green,
-            borderWidth: 1.5,
-            borderColor: colors.ink,
-            borderRadius: radius.lg,
-            padding: 16,
-            marginBottom: 16,
-          }}
-        >
-          <Facet size={9} style={{ marginTop: 4 }} />
-          <Body style={{ fontSize: 13, lineHeight: 19, flex: 1 }}>
-            This is the 4th comparison where the muted option won. Restraint keeps winning.
-          </Body>
-        </View>
+        <Reveal index={3}>
+          <View
+            style={{
+              flexDirection: 'row',
+              gap: 12,
+              backgroundColor: colors.green,
+              borderWidth: 1.5,
+              borderColor: colors.ink,
+              borderRadius: radius.lg,
+              padding: 18,
+              marginBottom: 16,
+            }}
+          >
+            <Facet size={10} style={{ marginTop: 5 }} />
+            <Body style={{ fontSize: 14.5, lineHeight: 21, flex: 1 }}>
+              This is the 4th comparison where the muted option won. Restraint keeps winning.
+            </Body>
+          </View>
+        </Reveal>
       </ScrollView>
 
       <View
