@@ -38,7 +38,7 @@ export function Label({ style, ...rest }: Props) {
           fontFamily: fontFamily.mono,
           textTransform: 'uppercase',
           letterSpacing: 1.4,
-          fontSize: 11,
+          fontSize: 12,
           color: colors.inkSoft,
         },
         style,

@@ -7,7 +7,9 @@ export const colors = {
   green: '#d6f2ae',
   orange: '#ea6f55',
   pink: '#d6a4d7',
-  inkSoft: '#4f5142',
+  // Darkened from #4f5142 for stronger contrast on cream surfaces — secondary
+  // text should still read as clearly legible, never gray-on-gray.
+  inkSoft: '#33332e',
   rule: 'rgba(0,0,0,0.16)',
   white: '#ffffff',
 };

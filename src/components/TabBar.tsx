@@ -44,10 +44,10 @@ export function TabBar({ active }: { active: TabKey }) {
           <Pressable
             key={tab.key}
             onPress={() => go(tab.screen)}
-            style={{ alignItems: 'center', gap: 6, minWidth: 48, paddingVertical: 4 }}
+            style={{ alignItems: 'center', gap: 5, minWidth: 48, paddingVertical: 4 }}
           >
             <View>
-              <Label style={{ fontSize: 15, color, textTransform: 'none', letterSpacing: 0 }}>
+              <Label style={{ fontSize: 19, color, textTransform: 'none', letterSpacing: 0 }}>
                 {tab.icon}
               </Label>
               {tab.key === 'review' && (
@@ -70,7 +70,7 @@ export function TabBar({ active }: { active: TabKey }) {
                 </View>
               )}
             </View>
-            <Label style={{ fontSize: 9.5, color }}>{tab.label}</Label>
+            <Label style={{ fontSize: 11.5, color, letterSpacing: 0.5 }}>{tab.label}</Label>
           </Pressable>
         );
       })}

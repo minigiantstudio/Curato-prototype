@@ -53,13 +53,13 @@ export function HomeScreen() {
           style={{ backgroundColor: colors.blue, marginBottom: 24 }}
         >
           <View style={{ paddingTop: 28, paddingHorizontal: 24, paddingBottom: 76, overflow: 'hidden' }}>
-            <Label style={{ fontSize: 11, color: 'rgba(255,255,255,0.7)', marginBottom: 14 }}>
+            <Label style={{ fontSize: 12, color: 'rgba(255,255,255,0.88)', marginBottom: 14 }}>
               (01) · Capture
             </Label>
-            <Display style={{ fontSize: 30, lineHeight: 34, color: colors.white, marginBottom: 12, maxWidth: 230 }}>
-              Saw something you <SerifAccent style={{ fontSize: 30, color: colors.white }}>love?</SerifAccent>
+            <Display style={{ fontSize: 32, lineHeight: 36, color: colors.white, marginBottom: 12, maxWidth: 240 }}>
+              Saw something you <SerifAccent style={{ fontSize: 32, color: colors.white }}>love?</SerifAccent>
             </Display>
-            <Body style={{ fontSize: 14, lineHeight: 21, color: 'rgba(255,255,255,0.82)', maxWidth: 210 }}>
+            <Body style={{ fontSize: 15, lineHeight: 22, color: 'rgba(255,255,255,0.92)', maxWidth: 220 }}>
               Capture it. Curato tells you why it caught your eye — and how it fits your taste.
             </Body>
             <View
@@ -97,13 +97,13 @@ export function HomeScreen() {
             radius={radius.lg}
             style={{ backgroundColor: colors.creamLight }}
           >
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14, padding: 16 }}>
-              <Label style={{ fontSize: 18, width: 22, textAlign: 'center', color: colors.ink, textTransform: 'none', letterSpacing: 0 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14, padding: 18 }}>
+              <Label style={{ fontSize: 21, width: 24, textAlign: 'center', color: colors.ink, textTransform: 'none', letterSpacing: 0 }}>
                 ⚖
               </Label>
               <View style={{ flex: 1 }}>
-                <Label style={{ fontSize: 12, color: colors.ink, marginBottom: 3 }}>Compare options</Label>
-                <Body style={{ fontSize: 12.5, lineHeight: 17 }}>Two directions? Get a recommendation.</Body>
+                <Label style={{ fontSize: 14, color: colors.ink, marginBottom: 4 }}>Compare options</Label>
+                <Body style={{ fontSize: 13.5, lineHeight: 18, color: colors.ink }}>Two directions? Get a recommendation.</Body>
               </View>
             </View>
           </BlockSurface>
@@ -114,13 +114,13 @@ export function HomeScreen() {
             radius={radius.lg}
             style={{ backgroundColor: colors.creamLight }}
           >
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14, padding: 16 }}>
-              <Label style={{ fontSize: 18, width: 22, textAlign: 'center', color: colors.ink, textTransform: 'none', letterSpacing: 0 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14, padding: 18 }}>
+              <Label style={{ fontSize: 21, width: 24, textAlign: 'center', color: colors.ink, textTransform: 'none', letterSpacing: 0 }}>
                 ◑
               </Label>
               <View style={{ flex: 1 }}>
-                <Label style={{ fontSize: 12, color: colors.ink, marginBottom: 3 }}>Brand check</Label>
-                <Body style={{ fontSize: 12.5, lineHeight: 17 }}>Does this match one of your brands?</Body>
+                <Label style={{ fontSize: 14, color: colors.ink, marginBottom: 4 }}>Brand check</Label>
+                <Body style={{ fontSize: 13.5, lineHeight: 18, color: colors.ink }}>Does this match one of your brands?</Body>
               </View>
             </View>
           </BlockSurface>
@@ -128,8 +128,8 @@ export function HomeScreen() {
 
         {/* Ambient insight line */}
         <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 8, paddingHorizontal: 2 }}>
-          <Facet size={7} style={{ marginTop: 5 }} />
-          <SerifAccent style={{ fontSize: 14.5, lineHeight: 22, color: colors.inkSoft, flex: 1 }}>
+          <Facet size={8} style={{ marginTop: 6 }} />
+          <SerifAccent style={{ fontSize: 16, lineHeight: 24, color: colors.ink, flex: 1 }}>
             You've confirmed {app.principlesConfirmed} principles this month. Restraint is becoming your
             clearest pattern.
           </SerifAccent>
