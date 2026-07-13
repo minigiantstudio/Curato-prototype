@@ -26,9 +26,7 @@
         "projectId": "3fb27049-bcfb-48ae-aeb6-0b6d07474ca4"
       }
     },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "exposdk:54.0.0",
     "updates": {
       "url": "https://u.expo.dev/3fb27049-bcfb-48ae-aeb6-0b6d07474ca4"
     }
